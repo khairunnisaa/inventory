@@ -292,18 +292,47 @@ The test suite includes:
 - Unit tests for `OrderService` (stock validation, stock reduction)
 - Integration tests for `OrderController` (end-to-end order creation)
 
-## Possible Improvements (Not Implemented)
+## Implemented Features
 
-1. **Pagination and Filtering**: Add pagination and filtering on list endpoints
-2. **Enhanced Validation**: Add more validation annotations and custom validators
-3. **Authentication/Authorization**: Add Spring Security for API protection
-4. **Audit Fields**: Add `createdBy`, `updatedBy`, `createdAt`, `updatedAt` fields
-5. **Error Codes**: Add structured error codes for better client error handling
-6. **API Documentation**: Add Swagger/OpenAPI documentation
-7. **Logging**: Add comprehensive logging for debugging and monitoring
-8. **Caching**: Add caching for frequently accessed items
-9. **Soft Delete**: Implement soft delete instead of hard delete
-10. **Stock History**: Track stock changes over time
+The following features are **already implemented** in this solution:
+
+✅ **Comprehensive Validation**: 
+   - Bean validation annotations (`@NotNull`, `@NotBlank`, `@Positive`, `@Size`, etc.)
+   - Custom business rule validation in service layer
+   - Database-level constraints (unique, foreign keys, check constraints)
+
+✅ **Logging**: 
+   - SLF4J logging throughout all service layers
+   - Error logging in exception handlers
+   - Debug, info, warn, and error level logging
+
+✅ **Error Handling**: 
+   - Custom exceptions with appropriate HTTP status codes
+   - Global exception handler with consistent error response format
+   - Detailed validation error messages
+
+✅ **Optimistic Locking**: 
+   - Version-based concurrency control
+   - Prevents race conditions during stock updates
+
+✅ **Transaction Management**: 
+   - Atomic order processing with `@Transactional`
+   - `REPEATABLE_READ` isolation level for stock consistency
+
+## Possible Future Enhancements
+
+The following features are **not implemented** but could be added for production use:
+
+1. **Pagination and Filtering**: Add pagination and filtering on list endpoints (e.g., `GET /api/items?page=0&size=20&sort=name`)
+2. **Authentication/Authorization**: Add Spring Security for API protection (JWT, OAuth2, or session-based)
+3. **Audit Fields**: Add `createdBy`, `updatedBy`, `createdAt`, `updatedAt` fields to track changes
+4. **Structured Error Codes**: Add error codes (e.g., `ERR_STOCK_INSUFFICIENT`) for better client error handling
+5. **API Documentation**: Add Swagger/OpenAPI documentation for interactive API exploration
+6. **Caching**: Add Redis cache for frequently accessed items to improve performance
+7. **Soft Delete**: Implement soft delete (mark as deleted) instead of hard delete for data retention
+8. **Stock History**: Track stock changes over time for auditing and reporting
+9. **Event-Driven Architecture**: Publish domain events (order created, stock low) for integration
+10. **Search Functionality**: Add full-text search for items by name or description
 
 ## License
 
