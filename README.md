@@ -5,8 +5,6 @@ A simple RESTful API for managing a shop warehouse inventory, built with Java 17
 ## 📚 Documentation
 
 - **[Architecture Documentation](./ARCHITECTURE.md)**: Comprehensive guide to the system architecture, design decisions, and patterns used
-- **[API Testing Guide](./API_TESTING_GUIDE.md)**: Instructions for testing the API with curl
-- **[EAV Model Analysis](./EAV_MODEL_ANALYSIS.md)**: Analysis of Entity-Attribute-Value model vs traditional relational schema
 
 ## Tech Stack
 
@@ -30,8 +28,8 @@ A simple RESTful API for managing a shop warehouse inventory, built with Java 17
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd test-java
+git clone https://github.com/khairunnisaa/inventory.git
+cd inventory
 ```
 
 2. Build and run the application:
